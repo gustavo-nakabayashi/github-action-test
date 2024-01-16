@@ -30,9 +30,16 @@ jobs:
         env:
           ALL_CHANGED_FILES: ${{ steps.changed-section-files.outputs.all_changed_files }}
         run: |
+          all_files=""
           for file in $( echo "$ALL_CHANGED_FILES" ); do
-            echo "$DEPLOY_CMD -f $file"
+            trimmed_name=$(basename "$file" .liquid)
+            echo $trimmed_name >> "$ALL_FILES "
+            all_files="$all_files $trimmed_name"
           done
+
+          echo $all_files
+
+
 
       # - uses: actions/setup-node@v3
       #   with:
