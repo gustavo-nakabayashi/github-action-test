@@ -17,7 +17,7 @@ jobs:
 
       - name: Set environment for branch
         run: |
-          if [[ $GITHUB_REF == 'refs/heads/master' ]]; then
+          if [[ $GITHUB_REF == 'refs/heads/main' ]]; then
               echo "pnpm run deploy:components -e dev" >> "$DEPLOY_CMD"
           else
               echo "pnpm run deploy:components -e prod" >> "$DEPLOY_CMD"
