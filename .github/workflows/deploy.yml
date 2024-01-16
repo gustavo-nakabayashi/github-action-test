@@ -30,9 +30,8 @@ jobs:
         env:
           ALL_CHANGED_FILES: ${{ steps.changed-section-files.outputs.all_changed_files }}
         run: |
-          for file in "$ALL_CHANGED_FILES"; do
+          for file in $( echo "$ALL_CHANGED_FILES" ); do
             echo "$DEPLOY_CMD -f $file"
-            echo "oi"
           done
 
       # - uses: actions/setup-node@v3
