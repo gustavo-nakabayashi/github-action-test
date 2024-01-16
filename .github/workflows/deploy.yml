@@ -23,7 +23,7 @@ jobs:
         id: changed-section-files
         uses: tj-actions/changed-files@v41
         with:
-          files: sections/*.{liquid}
+          files: sections/*.liquid
 
       - name: List all changed files markdown files
         if: steps.changed-section-files.outputs.any_changed == 'true'
