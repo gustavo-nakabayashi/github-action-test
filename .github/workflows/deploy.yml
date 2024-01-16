@@ -37,9 +37,7 @@ jobs:
             all_files="$all_files $trimmed_name"
           done
 
-          echo $all_files
-
-
+          echo "$DEPLOY_CMD $all_files"
 
       # - uses: actions/setup-node@v3
       #   with:
